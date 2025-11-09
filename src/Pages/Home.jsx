@@ -1,5 +1,7 @@
 import React from 'react';
 import Banner from '../Components/Banner';
+import Category from '../Components/Category';
+import Section from '../Components/Section';
 
 const Home = () => {
   return (
@@ -7,7 +9,12 @@ const Home = () => {
       <div className='mt-20 max-xl:px-5'>
         <Banner></Banner>
       </div>
-<h1 className="text-4xl font-bold text-red-500">Tailwind is working!</h1>
+       <div>
+        <Category></Category>
+       </div>
+       <div>
+        <Section></Section>
+       </div>
     </div>
   );
 };

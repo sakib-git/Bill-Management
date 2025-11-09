@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo from '../assets/logo.png';
+import logo1 from '../assets/9efea09272474b6f043f606ad6233be5.png';
 
 const Navbar = () => {
   const { user, setUser, LogOUt } = useContext(AuthContext);
@@ -18,7 +19,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base shadow-sm">
       <div className="navbar max-w-[1440px] mx-auto justify-between  ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -28,22 +29,22 @@ const Navbar = () => {
               </svg>
             </div>
             <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
-              <NavLink to="/" className={({ isActive }) => `font-bold  ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+              <NavLink to="/" className={({ isActive }) => `font-semibold  ${isActive ? 'bg-[#f1f5f9] px-4 py-2 rounded-md' : ''}`}>
                 Home
               </NavLink>
 
-              <NavLink to="/bills" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+              <NavLink to="/bills" className={({ isActive }) => `font-semibold  ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
                 Bills
               </NavLink>
               {user ? (
-                <NavLink to="/mybill" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
-                  my pay Bill
+                <NavLink to="/mybill" className={({ isActive }) => `font-semibold ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
+                  myPayBill
                 </NavLink>
               ) : (
                 ''
               )}
               {user ? (
-                <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+                <NavLink to="/profile" className={({ isActive }) => `font-semibold ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
                   profile
                 </NavLink>
               ) : (
@@ -51,28 +52,30 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <div className="bg-gradient-to-r to-orange-400 from-rose-500 w-13 h-13 rounded-full flex items-center">
-            <img src={logo} alt="" />
+
+          <div className="flex items-center gap-2 bg-white shadow-md rounded-full px-4 py-2 w-fit hover:shadow-lg ">
+            <img src={logo1} alt="UBMS Logo" className="w-8 h-8 rounded-full object-cover" />
+            <span className="font-semibold text-gray-700 text-lg">UBMS</span>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-3 items-center">
-            <NavLink to="/" className={({ isActive }) => `font-bold  ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+            <NavLink to="/" className={({ isActive }) => `font-semibold  ${isActive ? 'bg-[#f1f5f9] px-4 py-2 rounded-md' : ''}`}>
               Home
             </NavLink>
 
-            <NavLink to="/bills" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+            <NavLink to="/bills" className={({ isActive }) => `font-semibold  ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
               Bills
             </NavLink>
             {user ? (
-              <NavLink to="/mybill" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
-                my pay Bill
+              <NavLink to="/mybill" className={({ isActive }) => `font-semibold ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
+                myPayBill
               </NavLink>
             ) : (
               ''
             )}
             {user ? (
-              <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'bg-gradient-to-r to-orange-400 from-rose-500 text-white px-3 py-1 rounded-md' : ''}`}>
+              <NavLink to="/profile" className={({ isActive }) => `font-semibold ${isActive ? 'bg-[#f1f5f9]  px-4 py-2 rounded-md' : ''}`}>
                 profile
               </NavLink>
             ) : (
@@ -92,12 +95,12 @@ const Navbar = () => {
                   <span className="absolute -top-2 left-1/2 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-black/70"></span>
                 </span>
               </div>
-              <button onClick={handleLogout} className="bg-gradient-to-r to-orange-400 from-rose-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 font-medium text-[12px] outline">
+              <button onClick={handleLogout} className="bg-base btn px-4 py-2 rounded-md  font-medium text-[12px] outline-none hover:bg-[#f1f5f9]">
                 Logout
               </button>
             </div>
           ) : (
-            <NavLink to="/login" className=" bg-gradient-to-r to-orange-400 from-rose-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 font-medium text-[12px] outline">
+            <NavLink to="/login" className=" bg-base btn px-4 py-2 rounded-md  font-medium text-[12px] outline-none hover:bg-[#f1f5f9]">
               LOG IN
             </NavLink>
           )}
