@@ -1,9 +1,19 @@
 import React from 'react';
+import { useLoaderData } from 'react-router';
+import BillCard from '../Components/BillCard';
 
 const Bills = () => {
+ const bills = useLoaderData();
+
+
   return (
-    <div>
-      <h1>Bills</h1>
+    <div className='  max-w-[1440px] mx-auto'>
+      <h1 className='text-center text-4xl font-bold text-gray-500 py-4'>Bills</h1>
+      <div className='grid grid-cols-3  gap-6 py-10'>
+        {
+          bills.map(bill => <BillCard key={bill._id} bill={bill}></BillCard>)
+        }
+      </div>
     </div>
   );
 };

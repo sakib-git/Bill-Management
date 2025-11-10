@@ -9,6 +9,7 @@ import Profile from "../Pages/Profile";
 import PrivateRoutes from "../Provider/PrivateRoutes";
 import Bills from "../Pages/BIlls";
 import MyPayBill from "../Pages/MyPayBill";
+import BillDetails from "../Pages/BillDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
       },
       {
         path : '/bills',
-        element :<Bills></Bills>
+        element :<Bills></Bills>,
+        loader : () => fetch('http://localhost:3000/bills')
+
+       
       },
       {
         path : '/mybill',
@@ -49,6 +53,12 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register></Register>
+      },
+      {
+        path :'/details/:id',
+        element : <BillDetails></BillDetails>,
+       loader: ({ params }) => fetch(`http://localhost:3000/bills-details/${params.id}`)
+
       }
       
     ],
