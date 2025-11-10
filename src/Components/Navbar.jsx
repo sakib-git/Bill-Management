@@ -17,20 +17,17 @@ const Navbar = () => {
         console.error(err);
       });
   };
-    const [theme,setTheme] = useState(localStorage.getItem('theme') || 'light')
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   useEffect(() => {
-   const html = document.querySelector('html')
-   
-      html.setAttribute('data-theme', theme)
-      localStorage.setItem('theme', theme)
+    const html = document.querySelector('html');
 
-    
-  }, [theme])
-  const handleTheme =(e)=> {
-   setTheme(e ? 'dark' : 'light')
-  
-  }
- 
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+  const handleTheme = (theme) => {
+    setTheme(theme ? 'dark' : 'light');
+  };
+
   return (
     <div className="bg-base shadow-sm ">
       <div className="navbar max-w-[1440px] mx-auto justify-between  ">
@@ -96,13 +93,11 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-         
+
         <div className="navbar-end flex gap-4">
-               <div>
-         <input type="checkbox"
-         onClick={(e) => handleTheme(e.target.checked)}
-          defaultChecked={localStorage.getItem('theme') === 'dark'} className="toggle" />
-        </div>
+          <div>
+            <input type="checkbox" onClick={(e) => handleTheme(e.target.checked)} defaultChecked={localStorage.getItem('theme') === 'dark'} className="toggle" />
+          </div>
           {user ? (
             <div className="flex items-center gap-2">
               <div className="relative group">
@@ -114,7 +109,7 @@ const Navbar = () => {
                   <span className="absolute -top-2 left-1/2 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-black/70"></span>
                 </span>
               </div>
-         
+
               <button onClick={handleLogout} className="bg-base btn px-4 py-2 rounded-md  font-medium text-[12px] outline-none hover:bg-[#f1f5f9]">
                 Logout
               </button>

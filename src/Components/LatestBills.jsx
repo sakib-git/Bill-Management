@@ -3,13 +3,12 @@ import BillCard from '../Components/BillCard';
 
 const LatestBills = () => {
     const [bills, setBills] = useState([]);
-    // console.log(bills)
+   
   useEffect(() => {
      fetch('http://localhost:3000/latest-bills')
      .then(res => res.json())
      .then(data => {
 
-      //  console.log(data)
        setBills(data)
        
      })

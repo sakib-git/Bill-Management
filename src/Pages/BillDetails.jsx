@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {  useRef } from 'react';
 import { NavLink, useLoaderData } from 'react-router';
 
 const BillDetails = () => {
   const data = useLoaderData()
-  console.log(data)
   const  {image,title,category, location,amount,email,date, description, 
 } = data
+
+const billModalRef = useRef(null)
+const handleModal = () => {
+ billModalRef.current.showModal()
+}
   return (
    
       <div className="max-w-5xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg flex flex-col md:flex-row gap-6">
@@ -36,6 +40,25 @@ const BillDetails = () => {
      <NavLink to='/bills' className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-fit ">
           Back to Bills
         </NavLink>
+      <div className='flex justify-end'>
+          <button onClick={handleModal} className=' bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-fit font-bold '>Pay Bill</button>
+      </div>
+
+<dialog ref={billModalRef}  className="modal">
+  <div className="modal-box">
+    <form method="dialog">
+      {/* if there is a button in form, it will close the modal */}
+      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 className="font-bold text-lg">Bill Payment</h3>
+    <p className="py-4"> Please fill in the required form</p>
+   <form >
+     
+   </form>
+  </div>
+
+ 
+</dialog>
       </div>
     </div>
   );

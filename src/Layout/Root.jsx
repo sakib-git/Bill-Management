@@ -1,15 +1,14 @@
-
 import { Outlet } from 'react-router';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 const Root = () => {
   return (
-    <div className='flex flex-col h-screen'>
+    <div className="flex flex-col h-screen">
       <Navbar></Navbar>
-     <div className='flex-1'>
-       <Outlet></Outlet>
-     </div>
+      <div className="flex-1">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
