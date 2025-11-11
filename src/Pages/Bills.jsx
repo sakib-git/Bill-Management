@@ -1,10 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+// import { useLoaderData } from 'react-router';
 import BillCard from '../Components/BillCard';
+import UseBills from '../Hook/UseBills';
 
 const Bills = () => {
- const bills = useLoaderData();
+//  const bills = useLoaderData();
+ const {bills, loading} = UseBills()
 
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className='  max-w-[1440px] mx-auto'>
