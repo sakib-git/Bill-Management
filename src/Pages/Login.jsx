@@ -51,6 +51,7 @@ const Login = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto mt-20">
+      <title>login</title>
       <div className="flex max-w-[800px] mx-auto max-md:flex-col max-md:px-5">
         <div className="flex-1 bg-white shadow-2xl p-10 text-center rounded-bl-md rounded-t-md max-md:rounded-none  w-full">
           <form onSubmit={handlelogin} className="flex flex-col gap-6 mx-auto max-w-md ">
