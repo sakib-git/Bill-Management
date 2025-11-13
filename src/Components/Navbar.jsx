@@ -63,9 +63,9 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex items-center gap-2 bg-white shadow-md rounded-full px-4 py-2 w-fit hover:shadow-lg ">
+          <div className="flex items-center gap-2 bg-(--navbar-bg) shadow-md rounded-full px-4 py-2 w-fit hover:shadow-lg ">
             <img src={logo1} alt="UBMS Logo" className="w-8 h-8 rounded-full object-cover" />
-            <span className="font-semibold text-gray-700 text-lg">UBMS</span>
+            <span className="font-semibold text-(--category) text-lg">UBMS</span>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -96,7 +96,7 @@ const Navbar = () => {
 
         <div className="navbar-end flex gap-4">
           <div>
-            <input type="checkbox" onClick={(e) => handleTheme(e.target.checked)} defaultChecked={localStorage.getItem('theme') === 'dark'} className="toggle" />
+            <input type="checkbox" onClick={(e) => handleTheme(e.target.checked)} defaultChecked={localStorage.getItem('theme') === 'dark'} className="toggle  border-(--dark-border)" />
           </div>
           {user ? (
             <div className="flex items-center gap-2">

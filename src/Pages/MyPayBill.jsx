@@ -147,7 +147,7 @@ const MyPayBill = () => {
 
       <AnimatePresence>
         {selectedBill && (
-          <motion.div
+          <motion.div 
             initial={{
               opacity: 0,
             }}
@@ -158,7 +158,7 @@ const MyPayBill = () => {
               opacity: 0,
             }}
             onMouseDown={() => setSelectedBill(null)}
-            className=" pt-8 pb-24 px-4 overflow-y-auto fixed grid z-50 place-items-center inset-0 bg-black/20"
+            className=" pt-8 pb-24 px-4 overflow-y-auto fixed grid z-50 place-items-center inset-0 bg-black/20 "
           >
             <motion.div
               initial={{
@@ -172,7 +172,7 @@ const MyPayBill = () => {
                 opacity: 0,
               }}
               onMouseDown={(e) => e.stopPropagation()}
-              className="w-full max-w-[400px] bg-white p-4 rounded-xl relative"
+              className="w-full max-w-[400px] bg-(--navbar-bg) p-4 rounded-xl relative"
             >
               <button onClick={() => setSelectedBill(null)} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
@@ -180,7 +180,7 @@ const MyPayBill = () => {
 
               <h3 className="font-bold text-2xl text-center">Update Your Bill</h3>
 
-              <form onSubmit={handlesubmit} className="flex flex-col gap-2">
+              <form onSubmit={handlesubmit} className="flex flex-col gap-2 ">
                 <div>
                   <label className="block font-semibold mb-1">Email</label>
                   <input type="email" value={selectedBill.created_by} readOnly className="w-full border px-3 py-2 rounded-md text-(--input-text) bg-(--input-bg) outline-none " placeholder="Email" />

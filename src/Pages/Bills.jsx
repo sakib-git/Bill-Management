@@ -26,8 +26,8 @@ const Bills = () => {
     <div className="  max-w-[1440px] mx-auto mt-20">
       <title>Bill</title>
       <h1 className="text-center text-4xl font-bold text-[var(--category)] py-4">Bills</h1>
-      <form onSubmit={handleSearch} className="text-center ">
-        <label className="input outline-none focus:none border-gray-200 rounded-full">
+      <form onSubmit={handleSearch} className="text-center flex items-center justify-center gap-2">
+        <label className="input outline-none focus:none border-(--dark-border) rounded-full">
           <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
               <circle cx="11" cy="11" r="8"></circle>
@@ -36,7 +36,7 @@ const Bills = () => {
           </svg>
           <input type="search" name="search" placeholder="Search" />
         </label>
-        <button type="submit" className="btn rounded-full shadow-xl">
+        <button type="submit" className="bg-[var(--active)] px-8 py-[10px] rounded-full font-semibold">
           Search
         </button>
       </form>
