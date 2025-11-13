@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BillCard from '../Components/BillCard';
 import UseBills from '../Hook/UseBills';
+import { serverApi } from '../Hook/useServerAPI';
 
 const Bills = () => {
   const { bills, loading } = UseBills();
@@ -15,7 +16,7 @@ const Bills = () => {
     e.preventDefault();
     const searchText = e.target.search.value;
 
-    fetch(`https://assignment-10-backend-six.vercel.app/search?search=${searchText}`)
+    fetch(`${serverApi}/search?search=${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

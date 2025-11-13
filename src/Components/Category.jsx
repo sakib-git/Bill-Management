@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { Typewriter } from 'react-simple-typewriter';
+import { serverApi } from '../Hook/useServerAPI';
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('https://assignment-10-backend-six.vercel.app/bills')
+    fetch(`${serverApi}/bills`)
       .then((res) => res.json())
       .then((data) => {
         const allCategories = data.map((bill) => bill.category);
@@ -18,6 +19,8 @@ const Category = () => {
         });
 
         setCategories(uniqueCategories);
+      }).catch((err) => {
+        console.log(err);
       });
   }, []);
   const categoryBorder = {

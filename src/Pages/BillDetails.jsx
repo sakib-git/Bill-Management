@@ -3,6 +3,7 @@ import { NavLink, useLoaderData, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Provider/AuthProvider';
 import { format } from 'date-fns';
+import { serverApi } from '../Hook/useServerAPI';
 
 const BillDetails = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const BillDetails = () => {
       toast.error('Please fill in all fields before submitting!');
       return;
     }
-    fetch('https://assignment-10-backend-six.vercel.app/paybill', {
+    fetch(`${serverApi}/paybill`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import jsPDF from 'jspdf';
 import { autoTable } from 'jspdf-autotable';
 import { format } from 'date-fns';
+import { serverApi } from '../Hook/useServerAPI';
 
 const MyPayBill = () => {
   const [bills, setBills] = useState([]);
@@ -14,7 +15,7 @@ const MyPayBill = () => {
   const userEmail = user.email;
   //  console.log(userEmail)
   useEffect(() => {
-    fetch(`https://assignment-10-backend-six.vercel.app/paybillpersonal?email=${userEmail}`)
+    fetch(`${serverApi}/paybillpersonal?email=${userEmail}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -35,7 +36,7 @@ const MyPayBill = () => {
       toast.error('Please fill in all fields before submitting!');
       return;
     }
-    fetch(`https://assignment-10-backend-six.vercel.app/paybill/${selectedBill._id}`, {
+    fetch(`${serverApi}/paybill/${selectedBill._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ const MyPayBill = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-10-backend-six.vercel.app/paybill/${id}`, {
+        fetch(`${serverApi}/paybill/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

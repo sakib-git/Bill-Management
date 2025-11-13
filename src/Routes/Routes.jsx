@@ -11,6 +11,7 @@ import MyPayBill from '../Pages/MyPayBill';
 import BillDetails from '../Pages/BillDetails';
 import CategoryPage from '../Components/CategoryPage';
 import NotFount from '../Components/NotFount';
+import { serverApi } from '../Hook/useServerAPI';
 
 const router = createBrowserRouter([
   {
@@ -60,12 +61,12 @@ const router = createBrowserRouter([
             <BillDetails></BillDetails>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`https://assignment-10-backend-six.vercel.app/bills-details/${params.id}`),
+        loader: ({ params }) => fetch(`${serverApi}/bills-details/${params.id}`),
       },
       {
         path: '/category/:id',
         element: <CategoryPage></CategoryPage>,
-        loader: ({ params }) => fetch(`https://assignment-10-backend-six.vercel.app/bills?category=${params.id}`),
+        loader: ({ params }) => fetch(`${serverApi}/bills?category=${params.id}`),
       },
    
     ],
