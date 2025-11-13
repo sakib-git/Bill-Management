@@ -6,7 +6,7 @@ import Register from '../Pages/Register';
 import AuthProvider from '../Provider/AuthProvider';
 import Profile from '../Pages/Profile';
 import PrivateRoutes from '../Provider/PrivateRoutes';
-import Bills from '../Pages/BIlls';
+import Bills from '../Pages/Bills';
 import MyPayBill from '../Pages/MyPayBill';
 import BillDetails from '../Pages/BillDetails';
 import CategoryPage from '../Components/CategoryPage';
