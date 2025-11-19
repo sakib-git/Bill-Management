@@ -52,7 +52,7 @@ A MERN stack app to handle utility bill payments and user management.
 - Open terminal and run these commands
 
 ```bash
-git clone [https://github.com/riyad-96/KitzoBazar.git](https://github.com/sakib-git/Assignment-10.git)
+git clone https://github.com/sakib-git/Assignment-10.git
 cd Assignment-10
 npm i
 npm run dev
