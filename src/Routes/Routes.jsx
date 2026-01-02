@@ -12,6 +12,7 @@ import BillDetails from '../Pages/BillDetails';
 import CategoryPage from '../Components/CategoryPage';
 import NotFount from '../Components/NotFount';
 import { serverApi } from '../Hook/useServerAPI';
+import About from '../Pages/About';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/bills',
         element: <Bills></Bills>
+      },
+      {
+        path: '/about',
+        element: <About></About>
       },
       {
         path: '/mybill',

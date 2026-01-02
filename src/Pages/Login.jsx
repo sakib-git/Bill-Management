@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto mt-20">
+    <div className="max-w-[1440px] mx-auto mt-30">
       <title>login</title>
       <div className="flex max-w-[800px] mx-auto max-md:flex-col max-md:px-5">
         <div className="flex-1 shadow-2xl p-10 text-center rounded-bl-md rounded-tl-md max-md:rounded-none  w-full">

@@ -5,7 +5,7 @@ import { serverApi } from '../Hook/useServerAPI';
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`${serverApi}/bills`)
@@ -20,7 +20,7 @@ const Category = () => {
         });
 
         setCategories(uniqueCategories);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -34,17 +34,16 @@ const Category = () => {
     internet: 'hover:border-green-500',
   };
 
- if (loading) {
-  return (
-    
-    <div className="flex items-center justify-center h-screen">
-      <div className="w-12 h-12 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
-    </div>
-  );
-}
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-12 h-12 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
+      </div>
+    );
+  }
   return (
     <div>
-      <h1 className="text-2xl md:text-4xl text-center py-10 font-bold text-[var(--category)]">
+      <h1 id="category-h1" className="text-2xl md:text-4xl text-center py-10 font-bold text-[var(--category)] scroll-mt-[70px]">
         Manage Your{' '}
         <span className="text-blue-600">
           <Typewriter words={['Electricity', 'Gas', 'Water', 'Internet']} loop={true} cursor cursorStyle="|" typeSpeed={80} deleteSpeed={50} delaySpeed={1000} />
