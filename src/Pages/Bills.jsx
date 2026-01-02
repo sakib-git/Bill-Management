@@ -30,7 +30,8 @@ if (loading) {
 }
 
   return (
-    <div className="  max-w-[1440px] mx-auto mt-20">
+  <div className='mx-2 md:px-3'>
+      <div className="  max-w-[1440px] mx-auto mt-20">
       <title>Bill</title>
       <h1 className="text-center text-4xl font-bold text-[var(--category)] py-4">Bills</h1>
       <form onSubmit={handleSearch} className="text-center flex items-center justify-center gap-2 max-sm:px-4">
@@ -53,6 +54,7 @@ if (loading) {
         ))}
       </div>
     </div>
+  </div>
   );
 };
 
