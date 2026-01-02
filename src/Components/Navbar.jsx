@@ -73,26 +73,26 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex  items-center">
-            <NavLink to="/" className={({ isActive }) => `font-bold text-[17px] px-4 py-2 ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
+            <NavLink to="/" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
               Home
             </NavLink>
 
-            <NavLink to="/bills" className={({ isActive }) => `font-bold text-[17px] px-4 py-2 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
+            <NavLink to="/bills" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
               Bills
             </NavLink>
 
-            <NavLink to="/about" className={({ isActive }) => `font-bold text-[17px] px-4 py-2 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
+            <NavLink to="/about" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
               About
             </NavLink>
             {user ? (
-              <NavLink to="/mybill" className={({ isActive }) => `font-bold text-[17px] px-4 py-2 ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
+              <NavLink to="/mybill" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
                 myPayBill
               </NavLink>
             ) : (
               ''
             )}
             {user ? (
-              <NavLink to="/profile" className={({ isActive }) => `font-bold text-[17px]  px-4 py-2 ${isActive ? 'bg-(--active)    rounded-md' : ''}`}>
+              <NavLink to="/profile" className={({ isActive }) => `font-bold text-[17px]  px-4 py-1 ${isActive ? 'bg-(--active)    rounded-md' : ''}`}>
                 profile
               </NavLink>
             ) : (
