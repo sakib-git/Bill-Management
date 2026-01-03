@@ -4,13 +4,14 @@ import Section from '../Components/Section';
 import LatestBills from '../Components/LatestBills';
 import Section2 from '../Components/Section2';
 import Banner2 from '../Components/Banner2';
+import Newsletter from '../Components/Newsletter';
+import Fqa from '../Components/Fqa';
 
 const Home = () => {
   return (
     <div>
       <div className="">
         <Banner2></Banner2>
-        {/* <Banner></Banner> */}
       </div>
 
       <div className="mx-2 md:mx-3">
@@ -24,11 +25,22 @@ const Home = () => {
             <LatestBills></LatestBills>
           </div>
           <div>
+            <h1 className="text-4xl font-bold text-center mb-10">Key Features</h1>
+
+            <Banner></Banner>
+          </div>
+          <div>
             <Section></Section>
           </div>
         </div>
         <div>
           <Section2></Section2>
+        </div>
+        <div>
+        <Newsletter></Newsletter>
+        </div>
+        <div>
+       <Fqa></Fqa>
         </div>
       </div>
     </div>

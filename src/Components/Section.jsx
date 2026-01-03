@@ -8,7 +8,7 @@ import electricity from '../assets/Electricity.webp';
 const Section = () => {
   return (
     <div className=" py-10 ">
-      <h2 className="text-4xl font-bold text-center text-(--category) mb-8">Payment System </h2>
+      <h2 className="text-4xl font-bold text-center text-(--category) mb-6">Payment System </h2>
       <div className=" mx-auto grid grid-cols-1 gap-8 place-items-center max-w-[1200px]">
         <div className="flex items-center max-md:flex-col">
           <div className="flex-1">
