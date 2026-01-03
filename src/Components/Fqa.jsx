@@ -2,7 +2,7 @@ import React from 'react';
 
 const Fqa = () => {
   return (
-    <div className='max-w-[800px] py-10 mx-auto space-y-3'>
+    <div className='max-w-[800px] py-10 mx-auto space-y-3 h-[500px]'>
       <h2 className="text-4xl font-bold text-center mb-10">
   Billing FAQs
 </h2>

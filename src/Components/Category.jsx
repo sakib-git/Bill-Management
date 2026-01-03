@@ -43,7 +43,7 @@ const Category = () => {
   }
   return (
     <div>
-      <h1 id="category-h1" className="text-2xl md:text-4xl text-center py-10 font-bold text-[var(--category)] scroll-mt-[70px]">
+      <h1 id="category-h1" className="text-2xl md:text-4xl text-center py-10 font-bold text-[var(--category)] scroll-mt-[65px]">
         Manage Your{' '}
         <span className="text-blue-600">
           <Typewriter words={['Electricity', 'Gas', 'Water', 'Internet']} loop={true} cursor cursorStyle="|" typeSpeed={80} deleteSpeed={50} delaySpeed={1000} />

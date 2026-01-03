@@ -3,20 +3,12 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo1 from '../assets/9efea09272474b6f043f606ad6233be5.png';
 
+
 const Navbar = () => {
-  const { user, setUser, LogOUt } = useContext(AuthContext);
+  const { user, LogOUt } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    LogOUt()
-      .then(() => {
-        setUser(null);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   useEffect(() => {
     const html = document.querySelector('html');
@@ -27,7 +19,7 @@ const Navbar = () => {
   const handleTheme = (theme) => {
     setTheme(theme ? 'dark' : 'light');
   };
-  // bg-(--navbar-bg)
+
   return (
     <div className="bg-(--navbar-bg)/85 backdrop-blur-[8px] from-[#000545] via-[#224b8a] to-[#0dcaf0] fixed top-0 left-0 right-0 z-50 shadow-xs">
       <div className="navbar max-w-[1440px] mx-auto justify-between ">
@@ -84,6 +76,7 @@ const Navbar = () => {
             <NavLink to="/about" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
               About
             </NavLink>
+
             {user ? (
               <NavLink to="/mybill" className={({ isActive }) => `font-bold text-[17px] px-4 py-1 ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
                 myPayBill
@@ -108,18 +101,19 @@ const Navbar = () => {
           {user ? (
             <div className="flex items-center gap-2">
               <div className="relative group">
-                <div onClick={() => navigate('/profile')} className="w-10 h-10 bg-zinc-400 rounded-full overflow-hidden">
+                <div onClick={() => navigate('/profile')} className="w-10 h-10 bg-zinc-400 rounded-full overflow-hidden cursor-pointer">
                   <img className="w-full h-full object-cover" src={user.photoURL} alt="User photo" />
                 </div>
+
                 <span className="text-sm opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity dur bg-black/70 rounded-md py-1 px-2 text-white absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2">
                   {user.email}
                   <span className="absolute -top-2 left-1/2 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-black/70"></span>
                 </span>
               </div>
 
-              <button onClick={handleLogout} className="bg-base  px-6 py-2 rounded-md  font-bold text-[12px] outline-none bg-[#001351] text-white border-none">
-                Logout
-              </button>
+              <NavLink to="/dashboard" className="bg-base  px-6 py-3 rounded-md  font-semibold text-[15px] outline-none bg-[#001351] text-white border-none">
+                dashboard
+              </NavLink>
             </div>
           ) : (
             <NavLink to="/login" className=" bg-base  px-6 py-2 rounded-md  font-bold text-[12px] outline-none bg-[#001351]  text-white border-none">

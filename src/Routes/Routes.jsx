@@ -13,15 +13,15 @@ import CategoryPage from '../Components/CategoryPage';
 import NotFount from '../Components/NotFount';
 import { serverApi } from '../Hook/useServerAPI';
 import About from '../Pages/About';
+import DashboardLayout from '../Layout/DashboardLayout';
+import DashboardHome from '../Dashboard/DashboardHome';
+import DashboardProfile from '../Dashboard/DashboardProfile';
+import DashboarPaybill from '../Dashboard/DashboarPaybill';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <AuthProvider>
-        <Root></Root>
-      </AuthProvider>
-    ),
+    element: <Root></Root>,
     children: [
       {
         index: true,
@@ -29,11 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/bills',
-        element: <Bills></Bills>
+        element: <Bills></Bills>,
       },
       {
         path: '/about',
-        element: <About></About>
+        element: <About></About>,
       },
       {
         path: '/mybill',
@@ -73,11 +73,32 @@ const router = createBrowserRouter([
         element: <CategoryPage></CategoryPage>,
         loader: ({ params }) => fetch(`${serverApi}/bills?category=${params.id}`),
       },
-   
     ],
-  
   },
-   {
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        index: true,
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
+        path: '/dashboard/profile',
+        element: <DashboardProfile></DashboardProfile>,
+      },
+      {
+        path: '/dashboard/myPaybill',
+        element: <DashboarPaybill></DashboarPaybill>,
+      },
+    ],
+  },
+
+  {
     path: '*',
     element: <NotFount></NotFount>,
   },

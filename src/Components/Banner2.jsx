@@ -4,7 +4,7 @@ import phone from '../assets/mobile bill.png';
 import { IoArrowDown } from 'react-icons/io5';
 const Banner2 = () => {
   return (
-    <div className="bg-linear-to-br from-[#000545] via-[#224b8a] to-[#0dcaf0] mt-16 lg:mt-18 py-20 ">
+    <div className="bg-linear-to-br from-[#000545] via-[#224b8a] to-[#0dcaf0] mt-16 lg:mt-17 py-20 ">
       <div className="max-w-[1400px] mx-auto ">
         <div className="flex justify-between items-center gap-10 max-md:flex-col  md:mx-4">
           <div className="flex-1">

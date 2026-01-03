@@ -1,29 +1,26 @@
-import { updateProfile } from 'firebase/auth';
-import { use } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+import { updateProfile } from 'firebase/auth';
 
-const Profile = () => {
-  const { user } = use(AuthContext);
-
-  const updateUserInfo = async (e) => {
-    e.preventDefault();
-    const displayName = e.target.name.value;
-    const photoURL = e.target.photo.value;
-
-    try {
-      await updateProfile(user, { displayName, photoURL });
-      alert('Profile info updated');
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
+const DashboardProfile = () => {
+const {user} = useContext(AuthContext)
+    const updateUserInfo = async (e) => {
+      e.preventDefault();
+      const displayName = e.target.name.value;
+      const photoURL = e.target.photo.value;
+  
+      try {
+        await updateProfile(user, { displayName, photoURL });
+        alert('Profile info updated');
+      } catch (err) {
+        console.error(err);
+      }
+    };
   return (
-    <div className="max-w-[1200px] mx-auto mt-20 p-6">
+   <div className=" mx-auto  p-6">
       <title>Profile</title>
       <div
-        className="bg-[var(--navbar-bg)] rounded-3xl shadow grid md:grid-cols-3 gap-8 p-8 hover:shadow-xl"
+        className="bg-[var(--navbar-bg)] rounded-3xl shadow grid md:grid-cols-3 gap-8 p-8 "
       >
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <div className="size-32 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
@@ -45,8 +42,7 @@ const Profile = () => {
 
             <div className="flex flex-col">
               <label className="text-[var(--category)] mb-2">Photo URL</label>
-              <input defaultValue={!user?.photoURL  } type="text" name="photo" placeholder="Photo URL" className="input px-4 py-2 rounded-lg border text-[var(--input-text)] bg-[var(--input-bg)]   focus:outline  " />
-              
+              <input defaultValue={user.photoURL} type="text" name="photo" placeholder="Photo URL" className="input px-4 py-2 rounded-lg border text-[var(--input-text)] bg-[var(--input-bg)]   focus:outline  " />
             </div>
 
             <div className="flex flex-col">
@@ -71,4 +67,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default DashboardProfile;
