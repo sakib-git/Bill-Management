@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const DashboardProfile = () => {
 const {user} = useContext(AuthContext)
@@ -11,7 +12,7 @@ const {user} = useContext(AuthContext)
   
       try {
         await updateProfile(user, { displayName, photoURL });
-        alert('Profile info updated');
+        toast.success('Profile info updated');
       } catch (err) {
         console.error(err);
       }

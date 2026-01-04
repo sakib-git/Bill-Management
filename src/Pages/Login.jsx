@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from 'firebase/auth';
 import { auth } from '../FireBase/Firebase.config';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const Googleprovider = new GoogleAuthProvider();
@@ -21,6 +22,16 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+
+if (!email) {
+  toast.error('Email is required');
+  return;
+}
+if (!password) {
+  toast.error('Password is required');
+  return;
+}
+
 
     signIn(email, password).then((result) => {
       setUser(result.user);
@@ -60,18 +71,21 @@ const Login = () => {
     setPassword("ABCDa123");
     return
   }
+
+  // #de513d
   return (
     <div className="max-w-[1440px] mx-auto mt-30">
       <title>login</title>
       <div className="flex max-w-[800px] mx-auto max-md:flex-col max-md:px-5">
-        <div className="flex-1 shadow-2xl p-10 text-center rounded-bl-md rounded-tl-md max-md:rounded-none  w-full">
+        <div className="flex-1 shadow p-10 text-center rounded-bl-md rounded-tl-md max-md:rounded-none  w-full">
           <form onSubmit={handlelogin} className="flex flex-col gap-6 mx-auto max-w-md ">
-            <h2 className="text-5xl font-extrabold bg-gradient-to-r from-orange-400 to-rose-500 text-transparent bg-clip-text">LOG IN</h2>
-            <input type="email" ref={emailRef} placeholder="Email" name="email"  value={email}   onChange={(e) => setEmail(e.target.value)}   className="input w-full "  />
+            <h2 className="text-5xl font-extrabold bg-gradient-to-r to-[#082966] from-[#1da6d3]   text-transparent bg-clip-text">LOG IN</h2>
+            {/* bg-gradient-to-r from-orange-400 to-rose-500 */}
+            <input type="email" ref={emailRef} placeholder="Email" name="email"  value={email}   onChange={(e) => setEmail(e.target.value)}   className="input w-full border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition"  />
 
             <div>
               <div className="relative ">
-                <input type={showpassword ? 'text' : 'password'} name="password"       value={password}  onChange={(e) => setPassword(e.target.value)} className="input w-full  " placeholder="Password" />
+                <input type={showpassword ? 'text' : 'password'} name="password"       value={password}  onChange={(e) => setPassword(e.target.value)} className="input w-full border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition " placeholder="Password" />
                 <span onClick={() => setShowpassword(!showpassword)} className="absolute right-7 top-2">
                   {showpassword ? <Eye width={18} /> : <EyeOff width={18} />}
                 </span>
@@ -82,8 +96,9 @@ const Login = () => {
               </div>
             </div>
             <div className="flex gap-2 flex-col">
-              <button className="bg-[#de513d] p-2 text-white font-bold w-full  rounded-md">LOG IN</button>
-              <button   type="button" onClick={handleguest} className='bg-[#de513d] p-2 rounded-md font-bold text-white'>Guest</button>
+              <button className="bg-[#082966] p-2 text-white font-bold w-full  rounded-md">LOG IN</button>
+              {/* bg-[#de513d] */}
+              <button   type="button" onClick={handleguest} className='bg-[#082966] p-2 rounded-md font-bold text-white'>Guest</button>
               <div className="flex items-center gap-4 w-full max-w-sm mx-auto">
                 <p className="flex-1 border-t border-gray-300"></p>
                 <p className="text-gray-500 font-medium">or</p>
@@ -105,7 +120,8 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <div className="flex-1  bg-gradient-to-r to-[#e2851d] from-[#de513d] text-center p-10 text-white flex flex-col justify-center gap-5 rounded-br-md rounded-tr-md max-md:rounded-none">
+        {/* bg-gradient-to-r to-[#e2851d] from-[#de513d] */}
+        <div className="flex-1 bg-gradient-to-r to-[#082966] from-[#1da6d3]  text-center p-10 text-white flex flex-col justify-center gap-5 rounded-br-md rounded-tr-md max-md:rounded-none">
           <div className="mx-auto">
             {' '}
             <UserPlus size={60} />{' '}

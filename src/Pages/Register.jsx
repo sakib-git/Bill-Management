@@ -21,6 +21,16 @@ const Googleprovider = new GoogleAuthProvider();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    if(!displayName){
+      toast.error('DisplayName is required')
+      return
+    }
+
+    if(!email){
+      toast.error('Email is required')
+      return
+    }
+
        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
       toast.error('Password must be at least 6 characters long and include both uppercase and lowercase letters.');
@@ -52,9 +62,9 @@ const Googleprovider = new GoogleAuthProvider();
         });
     }
   return (
-    <div className="max-w-[1440px] mx-auto mt-20">
+    <div className="max-w-[1440px] mx-auto mt-30">
       <div className="flex max-w-[800px] mx-auto max-md:flex-col max-md:px-5">
-        <div className="flex-1  bg-gradient-to-r to-[#e2851d] from-[#de513d] text-center p-10 text-white flex flex-col justify-center gap-5  rounded-bl-md rounded-tl-md max-md:rounded-none">
+        <div className="flex-1  bg-gradient-to-r to-[#082966] from-[#1da6d3]  text-center p-10 text-white flex flex-col justify-center gap-5  rounded-bl-md rounded-tl-md max-md:rounded-none">
           <div className="mx-auto">
             <ArrowRightToLine size={60} />
           </div>
@@ -66,17 +76,17 @@ const Googleprovider = new GoogleAuthProvider();
             <p className="font-bold">LOG IN</p>
           </Link>
         </div>
-        <div className="flex-1  shadow-2xl p-10 text-center rounded-br-md rounded-tr-md max-md:rounded-none  w-full">
+        <div className="flex-1 shadow p-10  text-center rounded-br-md rounded-tr-md max-md:rounded-none  w-full">
           <form onSubmit={handleRegister} className="flex flex-col gap-6 mx-auto max-w-md ">
-            <h2 className="text-5xl font-extrabold bg-gradient-to-r from-orange-400 to-rose-500 text-transparent bg-clip-text">REGISTER</h2>
+            <h2 className="text-5xl font-extrabold bg-gradient-to-r to-[#082966] from-[#1da6d3]  text-transparent bg-clip-text">REGISTER</h2>
 
-            <input type="text" placeholder="Name" name='name' className="input   w-full  " />
-            <input type="text" placeholder="Photo URL" name='photo' className="input w-full" />
-            <input type="email" placeholder="Email" name='email' className="input w-full" />
-            <input type="text" placeholder="Password" name='password' className="input w-full" />
+            <input type="text" placeholder="Name" name='name' className="input   w-full  border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition " />
+            <input type="text" placeholder="Photo URL" name='photo' className="input w-full border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition" />
+            <input type="email" placeholder="Email" name='email' className="input w-full border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition" />
+            <input type="text" placeholder="Password" name='password' className="input w-full border border-[#c9c9c9] rounded-md  px-2 py-2 focus:outline-none focus:border-[#c9c9c9]  focus:ring-2 focus:ring-[#c9c9c9] transition" />
 
             <div className="flex gap-2 flex-col">
-              <button className="bg-[#de513d] p-2 text-white font-bold w-full  rounded-md">REGISTER</button>
+              <button className="bg-[#082966] p-2 text-white font-bold w-full  rounded-md">REGISTER</button>
               <div className="flex items-center gap-4 w-full max-w-sm mx-auto">
                 <p className="flex-1 border-t border-gray-300"></p>
                 <p className="text-gray-500 font-medium">or</p>
