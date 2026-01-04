@@ -3,6 +3,39 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo1 from '../assets/9efea09272474b6f043f606ad6233be5.png';
 
+// <div className="dropdown">
+//   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+//     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+//     </svg>
+//   </div>
+//   <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+//     <NavLink to="/" className={({ isActive }) => `font-semibold px-4 py-2  ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
+//       Home
+//     </NavLink>
+
+//     <NavLink to="/bills" className={({ isActive }) => `font-semibold px-4 py-2  ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
+//       Bills
+//     </NavLink>
+//     <NavLink to="/about" className={({ isActive }) => `font-semibold px-4 py-2  ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
+//       About
+//     </NavLink>
+//     {user ? (
+//       <NavLink to="/mybill" className={({ isActive }) => `font-semibold px-4 py-2 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
+//         myPayBill
+//       </NavLink>
+//     ) : (
+//       ''
+//     )}
+//     {user ? (
+//       <NavLink to="/profile" className={({ isActive }) => `font-semibold px-4 py-2 ${isActive ? 'bg-(--active)   rounded-md' : ''}`}>
+//         profile
+//       </NavLink>
+//     ) : (
+//       ''
+//     )}
+//   </ul>
+// </div>
 
 const Navbar = () => {
   const { user, LogOUt } = useContext(AuthContext);
@@ -24,13 +57,16 @@ const Navbar = () => {
     <div className="bg-(--navbar-bg)/85 backdrop-blur-[8px] from-[#000545] via-[#224b8a] to-[#0dcaf0] fixed top-0 left-0 right-0 z-50 shadow-xs">
       <div className="navbar max-w-[1440px] mx-auto justify-between ">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown ">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+            <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100  z-10 mt-3  w-70 -translate-x-3  h-screen shadow">
+
+         
+
               <NavLink to="/" className={({ isActive }) => `font-semibold px-4 py-2  ${isActive ? 'bg-(--active)  rounded-md' : ''}`}>
                 Home
               </NavLink>

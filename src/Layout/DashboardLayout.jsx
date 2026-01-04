@@ -46,15 +46,15 @@ const DashboardLayout = () => {
         </div>
 
         <div className="space-y-4">
-          <NavLink to="/dashboard" end onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4  ${isActive ? 'bg-(--active) text-black  rounded-md' : 'bg-transparent'}`}>
+          <NavLink to="/dashboard" end onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4  ${isActive ? 'bg-(--active) text-(--category)  rounded-md' : 'bg-transparent'}`}>
             Dashboard
           </NavLink>
 
-          <NavLink to="/dashboard/myPaybill" onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4 ${isActive ? 'bg-(--active) text-black  rounded-md' : ''}`}>
+          <NavLink to="/dashboard/myPaybill" onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4 ${isActive ? 'bg-(--active) text-(--category) rounded-md' : ''}`}>
             My Bill
           </NavLink>
 
-          <NavLink to="/dashboard/profile" onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4  ${isActive ? 'bg-(--active) text-black rounded-md' : ''}`}>
+          <NavLink to="/dashboard/profile" onClick={() => setOpen(false)} className={({ isActive }) => `block py-2 font-semibold px-4  ${isActive ? 'bg-(--active) text-(--category) rounded-md' : ''}`}>
             Profile
           </NavLink>
 
@@ -69,7 +69,7 @@ const DashboardLayout = () => {
           <button className="text-2xl" onClick={() => setOpen(true)}>
             <FiMenu />
           </button>
-          <h1 className="ml-4 font-semibold">Dashboard</h1>
+          <h1 className="ml-4 font-semibold text-(--category)">Dashboard</h1>
         </header>
 
         <main className="flex-1 p-5">

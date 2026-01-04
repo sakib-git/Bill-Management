@@ -11,6 +11,11 @@ const Login = () => {
   const [showpassword, setShowpassword] = useState(false);
   const navigate = useNavigate();
   const emailRef = useRef(null);
+   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+
 
   const handlelogin = (e) => {
     e.preventDefault();
@@ -49,6 +54,12 @@ const Login = () => {
     });
   };
 
+
+    const handleguest = () => {
+    setEmail("user@gmail.com");
+    setPassword("ABCDa123");
+    return
+  }
   return (
     <div className="max-w-[1440px] mx-auto mt-30">
       <title>login</title>
@@ -56,11 +67,11 @@ const Login = () => {
         <div className="flex-1 shadow-2xl p-10 text-center rounded-bl-md rounded-tl-md max-md:rounded-none  w-full">
           <form onSubmit={handlelogin} className="flex flex-col gap-6 mx-auto max-w-md ">
             <h2 className="text-5xl font-extrabold bg-gradient-to-r from-orange-400 to-rose-500 text-transparent bg-clip-text">LOG IN</h2>
-            <input type="email" ref={emailRef} placeholder="Email" name="email"   className="input w-full "  />
+            <input type="email" ref={emailRef} placeholder="Email" name="email"  value={email}   onChange={(e) => setEmail(e.target.value)}   className="input w-full "  />
 
             <div>
               <div className="relative ">
-                <input type={showpassword ? 'text' : 'password'} name="password" className="input w-full  " placeholder="Password" />
+                <input type={showpassword ? 'text' : 'password'} name="password"       value={password}  onChange={(e) => setPassword(e.target.value)} className="input w-full  " placeholder="Password" />
                 <span onClick={() => setShowpassword(!showpassword)} className="absolute right-7 top-2">
                   {showpassword ? <Eye width={18} /> : <EyeOff width={18} />}
                 </span>
@@ -72,6 +83,7 @@ const Login = () => {
             </div>
             <div className="flex gap-2 flex-col">
               <button className="bg-[#de513d] p-2 text-white font-bold w-full  rounded-md">LOG IN</button>
+              <button   type="button" onClick={handleguest} className='bg-[#de513d] p-2 rounded-md font-bold text-white'>Guest</button>
               <div className="flex items-center gap-4 w-full max-w-sm mx-auto">
                 <p className="flex-1 border-t border-gray-300"></p>
                 <p className="text-gray-500 font-medium">or</p>

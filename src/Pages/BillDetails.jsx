@@ -46,6 +46,10 @@ const BillDetails = () => {
     toast.success('Bill Paid Successfully');
     navigate('/mybill');
   };
+
+  const loginPaybill = () => {
+    navigate('/login')
+  }
   return (
     <div className="mx-2 md:mx-3">
       <div className="max-w-[1440px] mx-auto p-6 bg-(--navbar-bg)  rounded-2xl shadow-lg flex flex-col md:flex-row gap-6 mt-20 mb-10 ">
@@ -83,9 +87,13 @@ const BillDetails = () => {
             Back to Bills
           </NavLink>
           <div className="flex flex-col  items-end">
-            <button onClick={handleModal} className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-fit font-bold ${isPayable ? '' : 'opacity-60'}`}>
-              Pay Bill
-            </button>
+            {user ? (
+              <button onClick={handleModal} className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-fit font-bold ${isPayable ? '' : 'opacity-60'}`}>
+                Pay Bill
+              </button>
+            ) : (
+              <button onClick={loginPaybill} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-fit font-bold ">Pay Bill</button>
+            )}
             {!isPayable && <span className="text-red-500 text-xs">Only current month bills can be paid</span>}
           </div>
 

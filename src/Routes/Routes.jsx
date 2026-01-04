@@ -61,11 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: (
-          <PrivateRoutes>
-            <BillDetails></BillDetails>
-          </PrivateRoutes>
-        ),
+        element: <BillDetails></BillDetails>,
         loader: ({ params }) => fetch(`${serverApi}/bills-details/${params.id}`),
       },
       {

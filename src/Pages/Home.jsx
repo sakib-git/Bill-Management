@@ -37,12 +37,12 @@ const Home = () => {
           <Section2></Section2>
         </div>
         <div>
-        <Newsletter></Newsletter>
-        </div>
-        <div>
        <Fqa></Fqa>
         </div>
       </div>
+        <div>
+        <Newsletter></Newsletter>
+        </div>
     </div>
   );
 };
