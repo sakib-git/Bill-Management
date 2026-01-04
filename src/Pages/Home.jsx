@@ -6,6 +6,8 @@ import Section2 from '../Components/Section2';
 import Banner2 from '../Components/Banner2';
 import Newsletter from '../Components/Newsletter';
 import Fqa from '../Components/Fqa';
+import WhyChooseUs from '../Components/WhyChooseUs';
+import Benefits from '../Components/Benefits';
 
 const Home = () => {
   return (
@@ -24,8 +26,14 @@ const Home = () => {
           <div>
             <LatestBills></LatestBills>
           </div>
+          <div className='my-10'>
+            <WhyChooseUs></WhyChooseUs>
+          </div>
           <div>
-            <h1 className="text-4xl font-bold text-center mb-10">Key Features</h1>
+           <Benefits></Benefits>
+          </div>
+          <div>
+            <h1 className="text-4xl font-bold text-center my-10">Key Features</h1>
 
             <Banner></Banner>
           </div>
