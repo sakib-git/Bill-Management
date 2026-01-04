@@ -65,7 +65,7 @@ const DashboardLayout = () => {
       </aside>
 
       <div className="flex-1 flex flex-col">
-        <header className="lg:hidden bg-white shadow px-4 py-3 flex items-center">
+        <header className="lg:hidden bg-(--active) text-(--category) shadow px-4 py-3 flex items-center">
           <button className="text-2xl" onClick={() => setOpen(true)}>
             <FiMenu />
           </button>
